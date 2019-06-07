@@ -1,4 +1,7 @@
 #nav-bar {
+  position: fixed;
+  z-index: 100000;
+  top: 0;
   height: 80px;
   width: 100%;
   background-color: #00a087;
@@ -17,4 +20,8 @@
   float: left;
   font-size: 2rem;
   line-height: 80px;
+}
+
+.container {
+  margin-top: 100px;
 }
