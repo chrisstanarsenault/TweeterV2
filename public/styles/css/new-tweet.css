@@ -10,6 +10,8 @@
     display: block;
     width: 100%;
     margin-bottom: 5px; }
-  .container .new-tweet .counter {
+  .container .new-tweet .counter, .container .new-tweet .counterRed {
     float: right;
     padding-right: 10px; }
+  .container .new-tweet .counterRed {
+    color: red; }
