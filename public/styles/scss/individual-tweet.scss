@@ -1,0 +1,72 @@
+.container .full-tweets-container .new-tweet-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin: 0 2em 10em;
+
+  .tweet-header {
+    display: flex;
+    align-items: center;
+    background-color: lightgray;
+    height: 80px;
+    width: 100%;
+    opacity: .7;
+
+    .tweet-header-image {
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 .5em;
+    }
+
+    .tweet-name-handle-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      h2 {
+        margin-right: auto;
+        align-self: flex-start;
+      }
+
+      span {
+        align-self: flex-start;
+        margin-left: auto;
+        padding: 5px;
+      }
+    }
+  }
+
+  .tweet-body {
+    font-size: 19px;
+    padding-left: 10px;
+  }
+
+  .tweet-footer {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid lightgray;
+    padding-left: 10px;
+
+    .footer-icons {
+      margin-left: auto;
+      padding-right: 10px;
+      display: none;
+    }
+  }
+}
+
+.container .full-tweets-container .new-tweet-container:hover {
+  border: 1px solid darkgray;
+}
+.container .full-tweets-container .new-tweet-container:hover .tweet-header {
+    opacity: 1;
+  }
+
+.container .full-tweets-container .new-tweet-container:hover .footer-icons {
+  display: inline-block;
+}
+
+
+
