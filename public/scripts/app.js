@@ -95,13 +95,9 @@ $(document).ready(function() {
         <img src="#" class="tweet-like-icon" />
       </div>
     </footer>
-
   `;
-    //$('header').append();
     $tweets = $tweets.append(html);
-    // $('#tweets-container').append($tweet);
     return $tweets;
-  //console.log(tweetData)
   };
 
   function renderTweets(tweets) {
@@ -114,10 +110,20 @@ $(document).ready(function() {
     }
   }
 
-  //let $tweet = createTweetElement(data);
-  // Test / driver code (temporary)
-  //console.log($tweet); // to see what it looks like
-   // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  $(function() {
+    let $tweetSubmit = $('#tweet-form');
+    $tweetSubmit.on('submit', (event) => {
+      event.preventDefault();
+      console.log('Button clicked, performing ajax call...')
+
+      let dataRequest = $tweetSubmit.serialize();
+      $.ajax('/tweets', {
+        method: 'POST',
+        data: dataRequest,
+      })
+    })
+  });
+
   renderTweets(data);
 
 });
