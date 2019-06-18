@@ -8,13 +8,13 @@
   color: #e8fdff;
   padding: 0 2em;
 
-  #nav-bar .logo {
-    width: 80px;
+  .logo {
+    width: 70px;
     height: 80px;
     float: left;
   }
 
-  #nav-bar .header {
+  .header {
     padding-left: 10px;
     float: left;
     font-size: 2rem;
@@ -25,7 +25,7 @@
 .container {
   margin: 0 auto;
   padding-top: 140px;
-  width: 450px;
+  width: 1000px;
   background-color: white;
   border: 1px solid black;
 }
