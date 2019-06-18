@@ -41,7 +41,7 @@ $(document).ready(function() {
     // takes return value and appends it to the tweets container
     for (i = 0; i < tweets.length; i++) {
       let $tweet = createTweetElement(tweets[i])
-      $('#tweets-container').append($($tweet))
+      $('#tweets-container').prepend($($tweet))
     }
   }
 
@@ -52,16 +52,21 @@ $(document).ready(function() {
       console.log('Button clicked, performing ajax call...')
 
       let dataRequest = $tweetSubmit.serialize();
-      if ($('#text-area').val() == "") {
+      if ($('#text-area').val() == "" || $('#text-area').val() == null) {
         alert("this is blank");
       } else if ($('#text-area').val().length > 140) {
         alert("this is too long")
-      } else {
+      }
+
         $.ajax('/tweets', {
           method: 'POST',
           data: dataRequest,
         })
-      }
+        .then(
+          $('#text-area').val(''),
+          $('.counter').text(140),
+          loadTweets()
+        )
     })
   });
 
