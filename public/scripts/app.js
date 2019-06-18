@@ -9,7 +9,6 @@ $(document).ready(function() {
 
   let createTweetElement = (tweetData) => {
     let $tweets = $('<article>').addClass("new-tweet-container");
-
     let html = `
     <header class="tweet-header">
       <div class="tweet-header-image">
@@ -53,10 +52,16 @@ $(document).ready(function() {
       console.log('Button clicked, performing ajax call...')
 
       let dataRequest = $tweetSubmit.serialize();
-      $.ajax('/tweets', {
-        method: 'POST',
-        data: dataRequest,
-      })
+      if ($('#text-area').val() == "") {
+        alert("this is blank");
+      } else if ($('#text-area').val().length > 140) {
+        alert("this is too long")
+      } else {
+        $.ajax('/tweets', {
+          method: 'POST',
+          data: dataRequest,
+        })
+      }
     })
   });
 
