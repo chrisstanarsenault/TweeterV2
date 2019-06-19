@@ -9,6 +9,15 @@ $(document).ready(function() {
 
   let createTweetElement = (tweetData) => {
     let $tweets = $('<article>').addClass("new-tweet-container");
+
+    function escape(str) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML
+    }
+
+    const safeHTML = `<p>${escape(tweetData.content.text)}</p>`
+
     let html = `
     <header class="tweet-header">
       <div class="tweet-header-image">
@@ -20,7 +29,7 @@ $(document).ready(function() {
       </div>
     </header>
     <div class="tweet-body">
-      <p>${tweetData.content.text}</p>
+      ${safeHTML}
     </div>
     <footer class="tweet-footer">
       <div><p>Posted ${new Date(tweetData.created_at)}</p></div>
@@ -79,7 +88,5 @@ $(document).ready(function() {
   }
 
   loadTweets();
-  //renderTweets(data);
-
 });
 
