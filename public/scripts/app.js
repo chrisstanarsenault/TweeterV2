@@ -88,5 +88,16 @@ $(document).ready(function() {
   }
 
   loadTweets();
+
+  //let composeSlide = () => {
+    $("#compose-button").click(function() {
+      $(".compose-tweet").slideToggle("slow", function() {
+        if ($(this).is(':visible')) {
+          $('textarea').focus();
+        }
+      })
+    })
+  //}
+
 });
 
