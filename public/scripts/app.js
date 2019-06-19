@@ -61,12 +61,13 @@ $(document).ready(function() {
       console.log('Button clicked, performing ajax call...')
 
       let dataRequest = $tweetSubmit.serialize();
-      if ($('#text-area').val() == "" || $('#text-area').val() == null) {
-        alert("this is blank");
-      } else if ($('#text-area').val().length > 140) {
-        alert("this is too long")
-      }
-
+      if ($('#error-message').is(':visible')) {
+        $('#error-message').slideUp('slow');
+      } else if ($('#text-area').val() == "" || $('#text-area').val() == null) {
+          $('#error-message').text("You need to enter a tweet!").slideDown('fast');
+      } else if ($('#text-area').val().length > 1) {
+        $('#error-message').text("this is too long").slideDown('fast')
+      } else {
         $.ajax('/tweets', {
           method: 'POST',
           data: dataRequest,
@@ -76,6 +77,7 @@ $(document).ready(function() {
           $('.counter').text(140),
           loadTweets()
         )
+      }
     })
   });
 

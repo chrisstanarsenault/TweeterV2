@@ -2,7 +2,7 @@
   background-color: #eee;
   border: 1px solid grey;
   border-radius: 4px;
-  margin: 1em 6em 10em 6em;
+  margin: 1em 6em 0 6em;
   padding: 1em; }
   .container .compose-tweet h2 {
     border-bottom: 2px solid black; }
@@ -16,3 +16,10 @@
     padding-right: 10px; }
   .container .compose-tweet .counterRed {
     color: red; }
+
+.container .error-message {
+  background-color: pink;
+  border-radius: 4px;
+  margin: 0 6em;
+  padding: 1em;
+  display: none; }

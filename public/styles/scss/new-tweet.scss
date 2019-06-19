@@ -2,7 +2,7 @@
   background-color: #eee;
   border: 1px solid grey;
   border-radius: 4px;
-  margin: 1em 6em 10em 6em;
+  margin: 1em 6em 0 6em;
   padding: 1em;
 
   h2 {
@@ -24,4 +24,12 @@
   .counterRed {
     color: red;
   }
+}
+
+.container .error-message {
+  background-color: pink;
+  border-radius: 4px;
+  margin: 0 6em;
+  padding: 1em;
+  display: none;
 }
