@@ -65,7 +65,7 @@ $(document).ready(function() {
         $('#error-message').slideUp('slow');
       } else if ($('#text-area').val() == "" || $('#text-area').val() == null) {
           $('#error-message').text("You need to enter a tweet!").slideDown('fast');
-      } else if ($('#text-area').val().length > 1) {
+      } else if ($('#text-area').val().length > 150) {
         $('#error-message').text("this is too long").slideDown('fast')
       } else {
         $.ajax('/tweets', {
